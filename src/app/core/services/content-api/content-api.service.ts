@@ -24,6 +24,7 @@ export class ContentApiService {
   }
 
   getEntryById<T extends EntrySkeletonType>(entryId: string, query?: any) {
+    console.log(entryId);
     return this.client.getEntry<T>(entryId, query);
   }
 }

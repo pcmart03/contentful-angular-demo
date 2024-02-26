@@ -6,7 +6,7 @@ import { BehaviorSubject, from, map, Observable, take, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class StepIdServiceService {
+export class StepIdService {
   readonly #api = inject(ContentApiService);
   #stepsLoaded = false;
 
@@ -32,5 +32,6 @@ export class StepIdServiceService {
     }, new Map<string, string>());
 
     this.#steps.next(stepMap);
+    this.#stepsLoaded = true;
   }
 }

@@ -1,0 +1,39 @@
+query {
+  applicationStep(id: "3J2KFf2MsCcej9IeuAFeBo") {
+    title,
+    sections: sectionsCollection(limit: 10) {
+      items {
+        title,
+        sectionId
+        helpText {
+          paragaphId,
+          text
+        },
+        proseCollection {
+          items {
+            proseId,
+            prose
+          }
+        },
+        controls: formControlsCollection(limit: 50) {
+          items {
+            controlId,
+            label,
+            optionsCollection(limit: 10) {
+              items {
+                label,
+                value
+              }
+            },
+            errors: errorsCollection(limit: 3) {
+              items {
+                errorId,
+                message
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
