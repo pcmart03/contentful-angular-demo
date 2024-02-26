@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { StepIdServiceService } from './core/services/step-id-service/step-id-service.service';
+import { StepIdService } from './core/services/step-id-service/step-id.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -23,7 +23,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 })
 export class AppComponent {
   title = 'contentful-angular-demo';
-  #stepService = inject(StepIdServiceService);
+  #stepService = inject(StepIdService);
   stepId: Signal<string | undefined> = toSignal(
     this.#stepService.getStepId('account-owner'),
   );
